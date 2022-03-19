@@ -39,7 +39,7 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 
 ## Install
 
-    $ git clone https://github.com/YOUR_USERNAME/PROJECT_TITLE
+    $ git clone https://github.com/deepaktiwari-1987/retail-management-system-frontend.git
     $ cd PROJECT_TITLE
     $ npm install
 
