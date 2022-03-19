@@ -37,6 +37,7 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 
 ---
 
+
 ## Install
 
     $ git clone https://github.com/deepaktiwari-1987/retail-management-system-frontend.git
@@ -52,3 +53,7 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 ## Simple build for production
 
     $ npm run build
+
+## Sample Login Credentails
+
+deepak@gmail.com/1234
