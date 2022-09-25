@@ -1,6 +1,5 @@
 import React,{useEffect} from 'react';
 import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
-import './App.css';
 import HomeScreen from './screens/HomeScreen';
 import CategoryProductsScreen from './screens/CategoryProductsScreen';
 import ProductScreen from './screens/ProductScreen';
@@ -16,6 +15,18 @@ import OrderScreen from './screens/OrderScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import OrdersScreen from './screens/OrdersScreen';
 import CategoriesScreen from './screens/CategoriesScreen';
+import {GridContainer,
+  Header,
+  Brand,
+  HeaderLinks,
+  DropDown,
+  DropDownContent,
+  Sidebar,
+  SidebarCloseButton,
+  Categories,
+  Main,
+  Content,
+  Footer} from './App.style'
 import {
   listCategories,
 } from './actions/categoryActions';
@@ -43,13 +54,13 @@ function App() {
   }, []);
   return (
     <BrowserRouter>
-      <div className="grid-container">
-        <header className="header">
-          <div className="brand">
+      <GridContainer>
+        <Header>
+          <Brand>
             <button onClick={openMenu}>&#9776;</button>
             <Link to="/">Y Company</Link>
-          </div>
-          <div className="header-links">
+          </Brand>
+          <HeaderLinks>
             <a href="/cart">Cart</a>
             {userInfo ? (
               <Link to="/profile">{userInfo.name}</Link>
@@ -57,34 +68,34 @@ function App() {
               <Link to="/signin">Sign In</Link>
             )}
             {userInfo && userInfo.isAdmin && (
-              <div className="dropdown">
+              <DropDown>
                 <a href="#">Admin</a>
-                <ul className="dropdown-content">
+                <DropDownContent>
                   <li>
                     <Link to="/orders">Orders</Link>
                     <Link to="/products">Products</Link>
                     <Link to="/categories">Categories</Link>
                   </li>
-                </ul>
-              </div>
+                </DropDownContent>
+              </DropDown>
             )}
-          </div>
-        </header>
-        <aside className="sidebar">
+          </HeaderLinks>
+        </Header>
+        <Sidebar>
           <h3>Shopping Categories</h3>
-          <button className="sidebar-close-button" onClick={closeMenu}>
+          <SidebarCloseButton onClick={closeMenu}>
             x
-          </button>
-          <ul className="categories">
+          </SidebarCloseButton>
+          <Categories>
             {categories && categories.map((category) => {
               return <li key={category._id}>
                 <Link to={`/category/${category.name}`}>{category.name}</Link>
               </li>
             })}
-          </ul>
-        </aside>
-        <main className="main">
-          <div className="content">
+          </Categories>
+        </Sidebar>
+        <Main>
+          <Content>
             <Routes>
               <Route path="/orders" element={<OrdersScreen/>} />
               <Route path="/profile" element={<ProfileScreen/>} />
@@ -104,10 +115,10 @@ function App() {
               <Route path="/category/:id" element={<CategoryProductsScreen/>} />
               <Route path="/" exact={true} element={<HomeScreen/>} />
             </Routes>
-          </div>
-        </main>
-        <footer className="footer">All right reserved copyright@2022.</footer>
-      </div>
+          </Content>
+        </Main>
+        <Footer>All right reserved copyright@2022.</Footer>
+      </GridContainer>
     </BrowserRouter>
   );
 }

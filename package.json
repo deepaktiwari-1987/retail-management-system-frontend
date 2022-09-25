@@ -16,11 +16,13 @@
     "react-router-dom": "^6.2.1",
     "react-scripts": "^5.0.0",
     "redux": "^4.1.2",
-    "redux-thunk": "^2.4.1"
+    "redux-thunk": "^2.4.1",
+    "styled-components": "^5.3.5"
   },
   "scripts": {
     "start": "env-cmd -f ./src/config/.env react-scripts start",
     "build": "env-cmd -f ./src/config/.env react-scripts build",
+    "build:uat": "env-cmd -f ./src/config/.env.uat react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -38,5 +40,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "resolutions": {
+    "styled-components": "^5"
   }
 }
