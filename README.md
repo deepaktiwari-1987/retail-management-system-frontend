@@ -48,7 +48,7 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 
     $ npm start
 
-    NOTE : Currently backend application is setup on port 5000 if you are running your backend port on some other port then change the port number of api url in environment file
+    NOTE : Currently backend application is setup on port 5001 if you are running your backend port on some other port then change the port number of api url in environment file
 
 ## Simple build for production
 

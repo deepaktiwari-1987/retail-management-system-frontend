@@ -29,7 +29,7 @@ function HomeScreen(props) {
         latestOfferedProducts && latestOfferedProducts.length ? 
         <>
         <h1 className='heading'>Latest Offers</h1>
-          <Carousel autoPlay={true} width={'95%'}>
+          <Carousel autoPlay={true} width={'95%'} height={'400px'}>
             {latestOfferedProducts.map((product) => (
               <Link to={'/product/' + product._id} key={product._id}>
                   <div className='latestOfferProduct'>
